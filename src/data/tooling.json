@@ -1,0 +1,336 @@
+{
+  "stations": [
+    {
+      "id": 1,
+      "part_family": "MM-250-WS",
+      "station_num": 1,
+      "description": "Upset / Point Initiation",
+      "die": "MM-250-D1",
+      "punch": "MM-250-P1",
+      "punch_pin": "MM-250-PP1",
+      "spacer": "MM-250-SP1",
+      "ko_pin": "MM-250-KO1",
+      "notes": "ST1 punch pin sets point depth, do not substitute with larger family."
+    },
+    {
+      "id": 2,
+      "part_family": "MM-250-WS",
+      "station_num": 2,
+      "description": "Cone / Point Forming",
+      "die": "MM-250-D2",
+      "punch": "MM-250-P2",
+      "punch_pin": "MM-250-PP2",
+      "spacer": "MM-250-SP2",
+      "ko_pin": "MM-250-KO2",
+      "notes": "Verify knockout clearance. Smooth transition to station 3."
+    },
+    {
+      "id": 3,
+      "part_family": "MM-250-WS",
+      "station_num": 3,
+      "description": "Head Form / Point Finish",
+      "die": "MM-250-D3",
+      "punch": "MM-250-P3",
+      "punch_pin": "MM-250-PP3",
+      "spacer": "MM-250-SP3",
+      "ko_pin": "MM-250-KO3",
+      "notes": "Head finish station. Check flash/burr on parting line."
+    },
+    {
+      "id": 4,
+      "part_family": "MM-250-WS",
+      "station_num": 4,
+      "description": "Final Head Coin / Size",
+      "die": "MM-250-D4",
+      "punch": "MM-250-P4",
+      "punch_pin": "MM-250-PP4",
+      "spacer": "MM-250-SP4",
+      "ko_pin": "MM-250-KO4",
+      "notes": "Optional/sizing station. Often inactive for standard 1/4\" weld studs."
+    },
+    {
+      "id": 5,
+      "part_family": "MM-312-WS",
+      "station_num": 1,
+      "description": "Upset / Point Initiation",
+      "die": "MM-312-D1",
+      "punch": "MM-312-P1",
+      "punch_pin": "MM-312-PP1",
+      "spacer": "MM-312-SP1",
+      "ko_pin": "MM-312-KO1",
+      "notes": "Initial upset initiation. Maintain clean wire bevel."
+    },
+    {
+      "id": 6,
+      "part_family": "MM-312-WS",
+      "station_num": 2,
+      "description": "Cone / Point Forming",
+      "die": "MM-312-D2",
+      "punch": "MM-312-P2",
+      "punch_pin": "MM-312-PP2",
+      "spacer": "MM-312-SP2",
+      "ko_pin": "MM-312-KO2",
+      "notes": "ST2 die is shared with 1/4\" family on older setups — confirm MM-312-D2 is loaded."
+    },
+    {
+      "id": 7,
+      "part_family": "MM-312-WS",
+      "station_num": 3,
+      "description": "Head Form / Point Finish",
+      "die": "MM-312-D3",
+      "punch": "MM-312-P3",
+      "punch_pin": "MM-312-PP3",
+      "spacer": "MM-312-SP3",
+      "ko_pin": "MM-312-KO3",
+      "notes": "Head forming."
+    },
+    {
+      "id": 8,
+      "part_family": "MM-312-WS",
+      "station_num": 4,
+      "description": "Final Head Coin / Size",
+      "die": "MM-312-D4",
+      "punch": "MM-312-P4",
+      "punch_pin": "MM-312-PP4",
+      "spacer": "MM-312-SP4",
+      "ko_pin": "MM-312-KO4",
+      "notes": "Coining."
+    },
+    {
+      "id": 9,
+      "part_family": "MM-375-WS",
+      "station_num": 1,
+      "description": "Upset / Point Initiation",
+      "die": "MM-375-D1",
+      "punch": "MM-375-P1",
+      "punch_pin": "MM-375-PP1",
+      "spacer": "MM-375-SP1",
+      "ko_pin": "MM-375-KO1",
+      "notes": "3/8\" high volume line. Check punch face alignment."
+    },
+    {
+      "id": 10,
+      "part_family": "MM-375-WS",
+      "station_num": 2,
+      "description": "Cone / Point Forming",
+      "die": "MM-375-D2",
+      "punch": "MM-375-P2",
+      "punch_pin": "MM-375-PP2",
+      "spacer": "MM-375-SP2",
+      "ko_pin": "MM-375-KO2",
+      "notes": "Check die wear at every 50K pieces."
+    },
+    {
+      "id": 11,
+      "part_family": "MM-375-WS",
+      "station_num": 3,
+      "description": "Head Form / Point Finish",
+      "die": "MM-375-D3",
+      "punch": "MM-375-P3",
+      "punch_pin": "MM-375-PP3",
+      "spacer": "MM-375-SP3",
+      "ko_pin": "MM-375-KO3",
+      "notes": "KO pins at ST3 and ST4 wear faster on this size."
+    },
+    {
+      "id": 12,
+      "part_family": "MM-375-WS",
+      "station_num": 4,
+      "description": "Final Head Coin / Size",
+      "die": "MM-375-D4",
+      "punch": "MM-375-P4",
+      "punch_pin": "MM-375-PP4",
+      "spacer": "MM-375-SP4",
+      "ko_pin": "MM-375-KO4",
+      "notes": "Final coining and head tolerance control."
+    },
+    {
+      "id": 13,
+      "part_family": "MM-500-WS",
+      "station_num": 1,
+      "description": "Upset / Point Initiation",
+      "die": "MM-500-D1",
+      "punch": "MM-500-P1",
+      "punch_pin": "MM-500-PP1",
+      "spacer": "MM-500-SP1",
+      "ko_pin": "MM-500-KO1",
+      "notes": "Heavy wire section. Ensure adequate lube on cut end."
+    },
+    {
+      "id": 14,
+      "part_family": "MM-500-WS",
+      "station_num": 2,
+      "description": "Cone / Point Forming",
+      "die": "MM-500-D2",
+      "punch": "MM-500-P2",
+      "punch_pin": "MM-500-PP2",
+      "spacer": "MM-500-SP2",
+      "ko_pin": "MM-500-KO2",
+      "notes": "Verify finger timing CAM settings before first cycle."
+    },
+    {
+      "id": 15,
+      "part_family": "MM-500-WS",
+      "station_num": 3,
+      "description": "Head Form / Point Finish",
+      "die": "MM-500-D3",
+      "punch": "MM-500-P3",
+      "punch_pin": "MM-500-PP3",
+      "spacer": "MM-500-SP3",
+      "ko_pin": "MM-500-KO3",
+      "notes": "Check head concentricity."
+    },
+    {
+      "id": 16,
+      "part_family": "MM-500-WS",
+      "station_num": 4,
+      "description": "Final Head Coin / Size",
+      "die": "MM-500-D4",
+      "punch": "MM-500-P4",
+      "punch_pin": "MM-500-PP4",
+      "spacer": "MM-500-SP4",
+      "ko_pin": "MM-500-KO4",
+      "notes": "Coining."
+    },
+    {
+      "id": 17,
+      "part_family": "MM-562-WS",
+      "station_num": 1,
+      "description": "Upset / Point Initiation",
+      "die": "MM-562-D1",
+      "punch": "MM-562-P1",
+      "punch_pin": "MM-562-PP1",
+      "spacer": "MM-562-SP1",
+      "ko_pin": "MM-562-KO1",
+      "notes": "Upset."
+    },
+    {
+      "id": 18,
+      "part_family": "MM-562-WS",
+      "station_num": 2,
+      "description": "Cone / Point Forming",
+      "die": "MM-562-D2",
+      "punch": "MM-562-P2",
+      "punch_pin": "MM-562-PP2",
+      "spacer": "MM-562-SP2",
+      "ko_pin": "MM-562-KO2",
+      "notes": "Cone."
+    },
+    {
+      "id": 19,
+      "part_family": "MM-562-WS",
+      "station_num": 3,
+      "description": "Head Form / Point Finish",
+      "die": "MM-562-D3",
+      "punch": "MM-562-P3",
+      "punch_pin": "MM-562-PP3",
+      "spacer": "MM-562-SP3",
+      "ko_pin": "MM-562-KO3",
+      "notes": "Punch pins PP3 and PP4 are longest in the shop — store vertically."
+    },
+    {
+      "id": 20,
+      "part_family": "MM-562-WS",
+      "station_num": 4,
+      "description": "Final Head Coin / Size",
+      "die": "MM-562-D4",
+      "punch": "MM-562-P4",
+      "punch_pin": "MM-562-PP4",
+      "spacer": "MM-562-SP4",
+      "ko_pin": "MM-562-KO4",
+      "notes": "Coining."
+    },
+    {
+      "id": 21,
+      "part_family": "MM-625-WS",
+      "station_num": 1,
+      "description": "Upset / Point Initiation",
+      "die": "MM-625-D1",
+      "punch": "MM-625-P1",
+      "punch_pin": "MM-625-PP1",
+      "spacer": "MM-625-SP1",
+      "ko_pin": "MM-625-KO1",
+      "notes": "Heavy heading load."
+    },
+    {
+      "id": 22,
+      "part_family": "MM-625-WS",
+      "station_num": 2,
+      "description": "Cone / Point Forming",
+      "die": "MM-625-D2",
+      "punch": "MM-625-P2",
+      "punch_pin": "MM-625-PP2",
+      "spacer": "MM-625-SP2",
+      "ko_pin": "MM-625-KO2",
+      "notes": "Run machine at 80% speed until confirmed good on first 25 pieces."
+    },
+    {
+      "id": 23,
+      "part_family": "MM-625-WS",
+      "station_num": 3,
+      "description": "Head Form / Point Finish",
+      "die": "MM-625-D3",
+      "punch": "MM-625-P3",
+      "punch_pin": "MM-625-PP3",
+      "spacer": "MM-625-SP3",
+      "ko_pin": "MM-625-KO3",
+      "notes": "Check head flash."
+    },
+    {
+      "id": 24,
+      "part_family": "MM-625-WS",
+      "station_num": 4,
+      "description": "Final Head Coin / Size",
+      "die": "MM-625-D4",
+      "punch": "MM-625-P4",
+      "punch_pin": "MM-625-PP4",
+      "spacer": "MM-625-SP4",
+      "ko_pin": "MM-625-KO4",
+      "notes": "ST4 die wears fastest of all families — inspect every 40K pieces."
+    }
+  ],
+  "fingers": [
+    {
+      "id": 1,
+      "part_family": "MM-250-WS",
+      "finger_1": "MM-250-F1",
+      "finger_2": "MM-250-F2",
+      "notes": "All 4 stations active when sizing. Fingers sensitive on this family — check clamp pressure before run. ST1 punch pin sets point depth."
+    },
+    {
+      "id": 2,
+      "part_family": "MM-312-WS",
+      "finger_1": "MM-312-F1",
+      "finger_2": "MM-312-F2",
+      "notes": "All 4 stations active. Confirm MM-312-D2 is loaded, not MM-250-D2."
+    },
+    {
+      "id": 3,
+      "part_family": "MM-375-WS",
+      "finger_1": "MM-375-F1",
+      "finger_2": "MM-375-F2",
+      "notes": "All 4 stations active. 3/8\" is the highest volume family — check die wear at every 50K pieces. KO pins at ST3 and ST4 wear faster on this size."
+    },
+    {
+      "id": 4,
+      "part_family": "MM-500-WS",
+      "finger_1": "MM-500-F1",
+      "finger_2": "MM-500-F2",
+      "notes": "All 4 stations active. 1/2\" requires higher feed roll pressure than smaller families. Verify finger timing CAM settings before first cycle — heavier wire can cause transfer misses at ST2."
+    },
+    {
+      "id": 5,
+      "part_family": "MM-562-WS",
+      "finger_1": "MM-562-F1",
+      "finger_2": "MM-562-F2",
+      "notes": "All 4 stations active. 9/16\" and 5/8\" share the same finger pair design — F1 and F2 are NOT interchangeable with smaller families. Punch pins PP3 and PP4 are longest in the shop — store vertically."
+    },
+    {
+      "id": 6,
+      "part_family": "MM-625-WS",
+      "finger_1": "MM-625-F1",
+      "finger_2": "MM-625-F2",
+      "notes": "All 4 stations active. Heaviest wire on MM-14 — run machine at 80% speed until confirmed good on first 25 pieces. ST4 die wears fastest of all families — inspect every 40K pieces. Feed roll pressure will be highest setting in the shop for this family."
+    }
+  ]
+}
