@@ -337,3 +337,63 @@ The project also includes backend-oriented development paths for future local or
 
 ```bash
 npm install
+### Start the development frontend
+
+```bash
+npm run dev
+
+Start the backend server
+npm run server
+
+Build for Production 
+npm run build
+
+Run Tests
+npm test
+
+
+Local Shop-Floor Launch
+A Windows Launcher is included for Local use:
+start-app.bat
+
+The application can also be served to other devices on the same local network when configured for local deployment.
+Netlify Demo
+The static demo is configured through netlify.toml.
+In the public Netlify version:
+the frontend is built with Vite
+the app is published from dist
+SPA routing is redirected to index.html
+demonstration PDFs are served from public/prints
+demo setup history can persist locally in the browser using localStorage
+This public deployment is intended as a demonstration environment, not a production factory deployment.
+Repository Structure
+Important project files include:
+AGENTS.md — instructions for AI coding agents working in this repository
+PYTHON_ENGINEERING_STANDARD.md — engineering conventions for Python work
+docs/PRODUCT.md — product scope and boundaries
+docs/OPERATOR-WORKFLOW.md — operator workflow
+docs/DOMAIN-MODEL.md — manufacturing concepts and relationships
+docs/SAFETY-RULES.md — manufacturing authority and safety rules
+docs/ARCHITECTURE.md — architecture principles
+docs/decisions/ — architecture decision records
+Repository documentation is intended to remain the source of truth for product decisions.
+Design Principles
+SetPoint should remain:
+operator-first
+fast
+readable beside a machine
+touchscreen-friendly
+minimal-input
+conservative about manufacturing authority
+explicit about data provenance
+simple enough to actually use on the floor
+If a feature makes the application more impressive but harder for the operator to use, it is probably the wrong feature.
+Project Status
+SetPoint is an active MimirLogic project and is still evolving.
+The current public build is a demonstration of the product direction, operator workflow, data model, and interface concepts.
+The long-term goal is not to build software that looks impressive in a conference room.
+The goal is to build software that remains useful when someone is standing beside a machine trying to get the job running correctly.
+Author
+Brian James Gaynor
+MimirLogic
+Manufacturing operator building software around problems learned from the factory floor.
