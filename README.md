@@ -3,6 +3,7 @@
 **Operator-focused machine setup software for cold heading**
 
 SetPoint is a manufacturing setup assistant designed around the needs of the person actually standing at the machine.
+**Live Demo:** https://setupassit.netlify.app/
 
 Its purpose is simple:
 
