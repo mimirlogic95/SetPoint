@@ -135,7 +135,12 @@ const toolingData = {
         notes: 'Optional/sizing station. Often inactive for standard 1/4" weld studs.'
       }
     ],
-    fingers: { f1: 'MM-250-F1', f2: 'MM-250-F2' },
+    transfer_sets: [
+      { num: 1, a: 'MM-250-F1A', b: 'MM-250-F1B', notes: 'Cutoff to Station 1' },
+      { num: 2, a: 'MM-250-F2A', b: 'MM-250-F2B', notes: 'Station 1 to Station 2' },
+      { num: 3, a: 'MM-250-F3A', b: 'MM-250-F3B', notes: 'Station 2 to Station 3' },
+      { num: 4, a: 'MM-250-F4A', b: 'MM-250-F4B', notes: 'Station 3 to Station 4' }
+    ],
     notes: 'All 4 stations active when sizing. Fingers sensitive on this family — check clamp pressure before run. ST1 punch pin sets point depth.'
   },
   'MM-312-WS': {
@@ -182,7 +187,12 @@ const toolingData = {
         notes: 'Coining.'
       }
     ],
-    fingers: { f1: 'MM-312-F1', f2: 'MM-312-F2' },
+    transfer_sets: [
+      { num: 1, a: 'MM-312-F1A', b: 'MM-312-F1B', notes: 'Cutoff to Station 1' },
+      { num: 2, a: 'MM-312-F2A', b: 'MM-312-F2B', notes: 'Station 1 to Station 2' },
+      { num: 3, a: 'MM-312-F3A', b: 'MM-312-F3B', notes: 'Station 2 to Station 3' },
+      { num: 4, a: 'MM-312-F4A', b: 'MM-312-F4B', notes: 'Station 3 to Station 4' }
+    ],
     notes: 'All 4 stations active. Confirm MM-312-D2 is loaded, not MM-250-D2.'
   },
   'MM-375-WS': {
@@ -229,7 +239,12 @@ const toolingData = {
         notes: 'Final coining and head tolerance control.'
       }
     ],
-    fingers: { f1: 'MM-375-F1', f2: 'MM-375-F2' },
+    transfer_sets: [
+      { num: 1, a: 'MM-375-F1A', b: 'MM-375-F1B', notes: 'Cutoff to Station 1' },
+      { num: 2, a: 'MM-375-F2A', b: 'MM-375-F2B', notes: 'Station 1 to Station 2' },
+      { num: 3, a: 'MM-375-F3A', b: 'MM-375-F3B', notes: 'Station 2 to Station 3' },
+      { num: 4, a: 'MM-375-F4A', b: 'MM-375-F4B', notes: 'Station 3 to Station 4' }
+    ],
     notes: 'All 4 stations active. 3/8" is the highest volume family — check die wear at every 50K pieces. KO pins at ST3 and ST4 wear faster on this size.'
   },
   'MM-500-WS': {
@@ -276,7 +291,12 @@ const toolingData = {
         notes: 'Coining.'
       }
     ],
-    fingers: { f1: 'MM-500-F1', f2: 'MM-500-F2' },
+    transfer_sets: [
+      { num: 1, a: 'MM-500-F1A', b: 'MM-500-F1B', notes: 'Cutoff to Station 1' },
+      { num: 2, a: 'MM-500-F2A', b: 'MM-500-F2B', notes: 'Station 1 to Station 2' },
+      { num: 3, a: 'MM-500-F3A', b: 'MM-500-F3B', notes: 'Station 2 to Station 3' },
+      { num: 4, a: 'MM-500-F4A', b: 'MM-500-F4B', notes: 'Station 3 to Station 4' }
+    ],
     notes: 'All 4 stations active. 1/2" requires higher feed roll pressure than smaller families. Verify finger timing CAM settings before first cycle — heavier wire can cause transfer misses at ST2.'
   },
   'MM-562-WS': {
@@ -323,7 +343,12 @@ const toolingData = {
         notes: 'Coining.'
       }
     ],
-    fingers: { f1: 'MM-562-F1', f2: 'MM-562-F2' },
+    transfer_sets: [
+      { num: 1, a: 'MM-562-F1A', b: 'MM-562-F1B', notes: 'Cutoff to Station 1' },
+      { num: 2, a: 'MM-562-F2A', b: 'MM-562-F2B', notes: 'Station 1 to Station 2' },
+      { num: 3, a: 'MM-562-F3A', b: 'MM-562-F3B', notes: 'Station 2 to Station 3' },
+      { num: 4, a: 'MM-562-F4A', b: 'MM-562-F4B', notes: 'Station 3 to Station 4' }
+    ],
     notes: 'All 4 stations active. 9/16" and 5/8" share the same finger pair design — F1 and F2 are NOT interchangeable with smaller families. Punch pins PP3 and PP4 are longest in the shop — store vertically.'
   },
   'MM-625-WS': {
@@ -370,7 +395,12 @@ const toolingData = {
         notes: 'ST4 die wears fastest of all families — inspect every 40K pieces.'
       }
     ],
-    fingers: { f1: 'MM-625-F1', f2: 'MM-625-F2' },
+    transfer_sets: [
+      { num: 1, a: 'MM-625-F1A', b: 'MM-625-F1B', notes: 'Cutoff to Station 1' },
+      { num: 2, a: 'MM-625-F2A', b: 'MM-625-F2B', notes: 'Station 1 to Station 2' },
+      { num: 3, a: 'MM-625-F3A', b: 'MM-625-F3B', notes: 'Station 2 to Station 3' },
+      { num: 4, a: 'MM-625-F4A', b: 'MM-625-F4B', notes: 'Station 3 to Station 4' }
+    ],
     notes: 'All 4 stations active. Heaviest wire on MM-14 — run machine at 80% speed until confirmed good on first 25 pieces. ST4 die wears fastest of all families — inspect every 40K pieces. Feed roll pressure will be highest setting in the shop for this family.'
   }
 };
@@ -383,8 +413,8 @@ const insertStationStmt = db.prepare(`
 
 const insertFingerStmt = db.prepare(`
   INSERT OR REPLACE INTO tooling_fingers (
-    part_family, finger_1, finger_2, notes
-  ) VALUES (?, ?, ?, ?)
+    part_family, transfer_num, finger_a, finger_b, notes
+  ) VALUES (?, ?, ?, ?, ?)
 `);
 
 for (const [code, t] of Object.entries(toolingData)) {
@@ -401,10 +431,12 @@ for (const [code, t] of Object.entries(toolingData)) {
       st.notes
     );
   }
-  insertFingerStmt.run(code, t.fingers.f1, t.fingers.f2, t.notes);
+  for (const ts of t.transfer_sets) {
+    insertFingerStmt.run(code, ts.num, ts.a, ts.b, ts.notes || null);
+  }
 }
 
-console.log('Seeded tooling stations and fingers for all 6 families.');
+console.log('Seeded tooling stations and 4 transfer finger sets for all 6 families.');
 
 // 3. Seed Toolroom Inventory
 const sampleInventory = [
@@ -414,7 +446,14 @@ const sampleInventory = [
   { item_code: 'MM-250-D4', diameter: '1/4"', station: 'ST4', position: '1D', status: 'Ready', quantity: 1, notes: 'Sizing die' },
   { item_code: 'MM-250-P1', diameter: '1/4"', station: 'ST1', position: 'P1', status: 'Ready', quantity: 4, notes: 'Point starter' },
   { item_code: 'MM-250-P2', diameter: '1/4"', station: 'ST2', position: 'P2', status: 'In Use', quantity: 1, notes: 'Currently installed on MM-14' },
-  { item_code: 'MM-250-F1', diameter: '1/4"', station: 'Transfer', position: 'F1', status: 'Ready', quantity: 2, notes: 'Finger pair set A' },
+  { item_code: 'MM-250-F1A', diameter: '1/4"', station: 'Transfer 1', position: 'F1A', status: 'Ready', quantity: 2, notes: 'Transfer 1 Finger A' },
+  { item_code: 'MM-250-F1B', diameter: '1/4"', station: 'Transfer 1', position: 'F1B', status: 'Ready', quantity: 2, notes: 'Transfer 1 Finger B' },
+  { item_code: 'MM-250-F2A', diameter: '1/4"', station: 'Transfer 2', position: 'F2A', status: 'In Use', quantity: 1, notes: 'Mounted on MM-14' },
+  { item_code: 'MM-250-F2B', diameter: '1/4"', station: 'Transfer 2', position: 'F2B', status: 'In Use', quantity: 1, notes: 'Mounted on MM-14' },
+  { item_code: 'MM-250-F3A', diameter: '1/4"', station: 'Transfer 3', position: 'F3A', status: 'Ready', quantity: 2, notes: 'Transfer 3 Finger A' },
+  { item_code: 'MM-250-F3B', diameter: '1/4"', station: 'Transfer 3', position: 'F3B', status: 'Ready', quantity: 2, notes: 'Transfer 3 Finger B' },
+  { item_code: 'MM-250-F4A', diameter: '1/4"', station: 'Transfer 4', position: 'F4A', status: 'Ready', quantity: 2, notes: 'Transfer 4 Finger A' },
+  { item_code: 'MM-250-F4B', diameter: '1/4"', station: 'Transfer 4', position: 'F4B', status: 'Ready', quantity: 2, notes: 'Transfer 4 Finger B' },
   { item_code: 'MM-312-D1', diameter: '5/16"', station: 'ST1', position: '2A', status: 'Ready', quantity: 2, notes: 'Ready in rack' },
   { item_code: 'MM-375-D1', diameter: '3/8"', station: 'ST1', position: '3A', status: 'Ready', quantity: 3, notes: 'High volume stock' },
   { item_code: 'MM-500-D1', diameter: '1/2"', station: 'ST1', position: '4A', status: 'Ready', quantity: 2, notes: 'Heavy series' },
@@ -549,4 +588,18 @@ insertRunStmt.run(
 );
 
 console.log('Seeded historical setpoints for Machine MM-14.');
+
+// Sync static json files for Netlify
+const staticToolingPath = path.join(__dirname, '..', 'src', 'data', 'tooling.json');
+const staticInventoryPath = path.join(__dirname, '..', 'src', 'data', 'inventory.json');
+if (fs.existsSync(path.dirname(staticToolingPath))) {
+  const allStations = db.prepare('SELECT * FROM tooling_stations ORDER BY part_family, station_num').all();
+  const allTransferSets = db.prepare('SELECT * FROM tooling_fingers ORDER BY part_family, transfer_num').all();
+  fs.writeFileSync(staticToolingPath, JSON.stringify({ stations: allStations, transfer_sets: allTransferSets, fingers: allTransferSets }, null, 2));
+
+  const allInventory = db.prepare('SELECT * FROM toolroom_inventory').all();
+  fs.writeFileSync(staticInventoryPath, JSON.stringify(allInventory, null, 2));
+  console.log('Synced static tooling.json and inventory.json for Netlify.');
+}
+
 console.log('Seeding completed successfully!');

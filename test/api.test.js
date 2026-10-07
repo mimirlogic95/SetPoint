@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { db, initDb } from '../server/db.js';
 
 initDb();
@@ -15,9 +16,16 @@ console.log(`[PASS] MM-250-WS stations: ${stations.length} (Expected: 4)`);
 if (stations.length !== 4) throw new Error('Expected 4 stations for MM-250-WS');
 console.log(`       Station 1 Die: ${stations[0].die}, Punch: ${stations[0].punch}, Punch Pin: ${stations[0].punch_pin}`);
 
-// 3. Verify transfer fingers
-const fingers = db.prepare('SELECT * FROM tooling_fingers WHERE part_family = ?').get('MM-250-WS');
-console.log(`[PASS] MM-250-WS fingers: ${fingers.finger_1}, ${fingers.finger_2}`);
+// 3. Verify transfer finger sets (4 sets on MM-14)
+const transferSets = db.prepare('SELECT * FROM tooling_fingers WHERE part_family = ? ORDER BY transfer_num ASC').all('MM-250-WS');
+console.log(`[PASS] MM-250-WS transfer finger sets: ${transferSets.length} (Expected: 4)`);
+if (transferSets.length !== 4) throw new Error(`Expected 4 transfer finger sets for MM-250-WS, got ${transferSets.length}`);
+for (let i = 0; i < 4; i++) {
+  const ts = transferSets[i];
+  if (ts.transfer_num !== i + 1) throw new Error(`Expected transfer_num ${i + 1}, got ${ts.transfer_num}`);
+  if (!ts.finger_a || !ts.finger_b) throw new Error(`Missing finger_a or finger_b in transfer set ${ts.transfer_num}`);
+  console.log(`       Transfer Set ${ts.transfer_num}: A=${ts.finger_a}, B=${ts.finger_b} (${ts.notes || 'No note'})`);
+}
 
 // 4. Verify baseline setpoints
 const runs = db.prepare('SELECT * FROM setpoint_runs WHERE part_number = ? ORDER BY run_date DESC').all('MM-250-075-WS');
@@ -42,14 +50,27 @@ const testInsert = db.prepare(`
     'Verification test run passed with 0 scrap.'
   )
 `);
-const res = testInsert.run();
-console.log(`[PASS] Logged new run setpoint with ID: ${res.lastInsertRowid}`);
+let testInsertId = null;
+try {
+  const res = testInsert.run();
+  testInsertId = res.lastInsertRowid;
+  console.log(`[PASS] Logged new run setpoint with ID: ${testInsertId}`);
 
-const updatedRuns = db.prepare('SELECT * FROM setpoint_runs WHERE part_number = ? ORDER BY run_date DESC').all('MM-250-075-WS');
-console.log(`[PASS] Updated runs count: ${updatedRuns.length}`);
-
-// Clean up test entry
-db.prepare('DELETE FROM setpoint_runs WHERE id = ?').run(res.lastInsertRowid);
-console.log(`[PASS] Cleaned up verification test entry.`);
+  const updatedRuns = db.prepare('SELECT * FROM setpoint_runs WHERE part_number = ? ORDER BY run_date DESC').all('MM-250-075-WS');
+  console.log(`[PASS] Updated runs count: ${updatedRuns.length}`);
+  if (updatedRuns.length !== runs.length + 1) {
+    throw new Error(`Expected runs count to increase by 1, got ${updatedRuns.length} (was ${runs.length})`);
+  }
+} finally {
+  if (testInsertId) {
+    db.prepare('DELETE FROM setpoint_runs WHERE id = ?').run(testInsertId);
+    console.log(`[PASS] Cleaned up verification test entry.`);
+  }
+}
+// 6. Verify static fallback data (tooling.json) has 4 transfer sets per family
+const staticTooling = JSON.parse(fs.readFileSync(new URL('../src/data/tooling.json', import.meta.url), 'utf8'));
+const staticSets = staticTooling.transfer_sets.filter(s => s.part_family === 'MM-250-WS');
+console.log(`[PASS] Static fallback tooling.json MM-250-WS transfer sets: ${staticSets.length} (Expected: 4)`);
+if (staticSets.length !== 4) throw new Error(`Expected 4 static transfer sets for MM-250-WS, got ${staticSets.length}`);
 
 console.log('--- ALL AUTOMATED VERIFICATION CHECKS PASSED ---');

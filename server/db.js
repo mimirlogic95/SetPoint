@@ -11,12 +11,22 @@ if (!fs.existsSync(DATA_DIR)) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 
-const DB_PATH = path.join(DATA_DIR, 'mimir_factory.db');
+const DB_PATH = process.env.DB_PATH || path.join(DATA_DIR, 'mimir_factory.db');
 
 export const db = new DatabaseSync(DB_PATH);
 
-// Initialize Tables
 export function initDb() {
+  // Auto-migrate tooling_fingers if old schema exists
+  try {
+    const tableInfo = db.prepare("PRAGMA table_info(tooling_fingers)").all();
+    const hasOldCol = tableInfo.some(c => c.name === 'finger_1');
+    if (hasOldCol) {
+      db.exec("DROP TABLE tooling_fingers");
+    }
+  } catch (e) {
+    // ignore
+  }
+
   db.exec(`
     CREATE TABLE IF NOT EXISTS parts (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -61,10 +71,12 @@ export function initDb() {
 
     CREATE TABLE IF NOT EXISTS tooling_fingers (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
-      part_family TEXT UNIQUE NOT NULL,
-      finger_1 TEXT NOT NULL,
-      finger_2 TEXT NOT NULL,
-      notes TEXT
+      part_family TEXT NOT NULL,
+      transfer_num INTEGER NOT NULL,
+      finger_a TEXT NOT NULL,
+      finger_b TEXT NOT NULL,
+      notes TEXT,
+      UNIQUE(part_family, transfer_num)
     );
 
     CREATE TABLE IF NOT EXISTS setpoint_runs (

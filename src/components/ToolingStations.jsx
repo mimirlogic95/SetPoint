@@ -1,7 +1,8 @@
 import React from 'react';
 import { Wrench, ShieldAlert, CheckCircle2, AlertTriangle, ArrowRight, Layers } from 'lucide-react';
 
-export default function ToolingStations({ stations, fingers, inventory, familyCode }) {
+export default function ToolingStations({ stations, fingers, transfer_sets, inventory, familyCode }) {
+  const sets = transfer_sets || (Array.isArray(fingers) ? fingers : []);
   // Helper to lookup inventory status for an item code
   const getToolStatus = (itemCode) => {
     if (!inventory || inventory.length === 0) return null;
@@ -128,25 +129,72 @@ export default function ToolingStations({ stations, fingers, inventory, familyCo
         ))}
       </div>
 
-      {/* Transfer Fingers & Family Caution Footer */}
-      <div className="bg-slate-950 p-3 rounded-lg border border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
-        {/* Fingers */}
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-slate-400 font-semibold uppercase tracking-wider text-[11px]">
-            Transfer Fingers:
-          </span>
-          <span className="font-mono bg-slate-800 text-sky-400 px-2 py-0.5 rounded border border-slate-700 font-bold">
-            F1: {fingers?.finger_1 || 'MM-250-F1'}
-          </span>
-          <ArrowRight className="w-3.5 h-3.5 text-slate-600" />
-          <span className="font-mono bg-slate-800 text-sky-400 px-2 py-0.5 rounded border border-slate-700 font-bold">
-            F2: {fingers?.finger_2 || 'MM-250-F2'}
+      {/* Transfer Finger Sets Section (MM-14 4-Station Transfer) */}
+      <div className="bg-slate-950/60 border border-slate-800 rounded-lg p-3.5 flex flex-col gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2">
+          <div className="flex items-center gap-2">
+            <Layers className="w-4 h-4 text-sky-400" />
+            <h3 className="text-xs font-bold text-slate-200 tracking-wider uppercase">
+              Transfer Finger Sets (4 Transfer Positions)
+            </h3>
+          </div>
+          <span className="text-[11px] font-mono text-slate-400">
+            {sets.length > 0 ? `${sets.length} Sets Configured` : 'Standard Mating Pairs'}
           </span>
         </div>
 
-        {/* Global Family Note */}
-        {fingers?.notes && (
-          <div className="text-slate-400 text-xs italic flex-1 min-w-[280px]">
+        {/* 4 Compact Transfer Cards */}
+        {sets.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+            {sets.map((set) => (
+              <div
+                key={set.transfer_num || set.id}
+                className="bg-slate-900/90 border border-slate-800/90 rounded-md p-2.5 flex flex-col justify-between gap-2 hover:border-slate-700 transition"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-1 pb-1.5 border-b border-slate-800/80">
+                    <span className="font-mono font-bold text-[11px] text-sky-400 bg-sky-950/80 px-1.5 py-0.5 rounded border border-sky-800">
+                      TRANSFER {set.transfer_num}
+                    </span>
+                    {set.notes && (
+                      <span className="text-[10px] text-slate-400 truncate max-w-[120px]" title={set.notes}>
+                        {set.notes}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="py-1.5 flex flex-col gap-1.5 text-xs">
+                    {/* Finger A */}
+                    <div className="flex items-center justify-between gap-1">
+                      <span className="text-slate-500 font-mono text-[11px]">Finger A:</span>
+                      <div className="flex items-center gap-1.5">
+                        <span className="font-mono font-bold text-slate-200 text-xs">{set.finger_a}</span>
+                        {renderStatusBadge(set.finger_a)}
+                      </div>
+                    </div>
+
+                    {/* Finger B */}
+                    <div className="flex items-center justify-between gap-1">
+                      <span className="text-slate-500 font-mono text-[11px]">Finger B:</span>
+                      <div className="flex items-center gap-1.5">
+                        <span className="font-mono font-bold text-slate-200 text-xs">{set.finger_b}</span>
+                        {renderStatusBadge(set.finger_b)}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-xs text-slate-500 italic p-2 text-center">
+            No transfer finger sets specified for this family.
+          </div>
+        )}
+
+        {/* Global Family Note fallback if present */}
+        {!Array.isArray(fingers) && fingers?.notes && (
+          <div className="text-slate-400 text-xs italic bg-slate-900/60 p-2 rounded border border-slate-800/60">
             &ldquo;{fingers.notes}&rdquo;
           </div>
         )}

@@ -163,6 +163,7 @@ export default function App() {
                 <ToolingStations
                   stations={partDetail.stations}
                   fingers={partDetail.fingers}
+                  transfer_sets={partDetail.transfer_sets}
                   inventory={partDetail.inventory}
                   familyCode={partDetail.familyCode}
                 />

@@ -1,7 +1,7 @@
 {
   "stations": [
     {
-      "id": 1,
+      "id": 25,
       "part_family": "MM-250-WS",
       "station_num": 1,
       "description": "Upset / Point Initiation",
@@ -13,7 +13,7 @@
       "notes": "ST1 punch pin sets point depth, do not substitute with larger family."
     },
     {
-      "id": 2,
+      "id": 26,
       "part_family": "MM-250-WS",
       "station_num": 2,
       "description": "Cone / Point Forming",
@@ -25,7 +25,7 @@
       "notes": "Verify knockout clearance. Smooth transition to station 3."
     },
     {
-      "id": 3,
+      "id": 27,
       "part_family": "MM-250-WS",
       "station_num": 3,
       "description": "Head Form / Point Finish",
@@ -37,7 +37,7 @@
       "notes": "Head finish station. Check flash/burr on parting line."
     },
     {
-      "id": 4,
+      "id": 28,
       "part_family": "MM-250-WS",
       "station_num": 4,
       "description": "Final Head Coin / Size",
@@ -49,7 +49,7 @@
       "notes": "Optional/sizing station. Often inactive for standard 1/4\" weld studs."
     },
     {
-      "id": 5,
+      "id": 29,
       "part_family": "MM-312-WS",
       "station_num": 1,
       "description": "Upset / Point Initiation",
@@ -61,7 +61,7 @@
       "notes": "Initial upset initiation. Maintain clean wire bevel."
     },
     {
-      "id": 6,
+      "id": 30,
       "part_family": "MM-312-WS",
       "station_num": 2,
       "description": "Cone / Point Forming",
@@ -73,7 +73,7 @@
       "notes": "ST2 die is shared with 1/4\" family on older setups — confirm MM-312-D2 is loaded."
     },
     {
-      "id": 7,
+      "id": 31,
       "part_family": "MM-312-WS",
       "station_num": 3,
       "description": "Head Form / Point Finish",
@@ -85,7 +85,7 @@
       "notes": "Head forming."
     },
     {
-      "id": 8,
+      "id": 32,
       "part_family": "MM-312-WS",
       "station_num": 4,
       "description": "Final Head Coin / Size",
@@ -97,7 +97,7 @@
       "notes": "Coining."
     },
     {
-      "id": 9,
+      "id": 33,
       "part_family": "MM-375-WS",
       "station_num": 1,
       "description": "Upset / Point Initiation",
@@ -109,7 +109,7 @@
       "notes": "3/8\" high volume line. Check punch face alignment."
     },
     {
-      "id": 10,
+      "id": 34,
       "part_family": "MM-375-WS",
       "station_num": 2,
       "description": "Cone / Point Forming",
@@ -121,7 +121,7 @@
       "notes": "Check die wear at every 50K pieces."
     },
     {
-      "id": 11,
+      "id": 35,
       "part_family": "MM-375-WS",
       "station_num": 3,
       "description": "Head Form / Point Finish",
@@ -133,7 +133,7 @@
       "notes": "KO pins at ST3 and ST4 wear faster on this size."
     },
     {
-      "id": 12,
+      "id": 36,
       "part_family": "MM-375-WS",
       "station_num": 4,
       "description": "Final Head Coin / Size",
@@ -145,7 +145,7 @@
       "notes": "Final coining and head tolerance control."
     },
     {
-      "id": 13,
+      "id": 37,
       "part_family": "MM-500-WS",
       "station_num": 1,
       "description": "Upset / Point Initiation",
@@ -157,7 +157,7 @@
       "notes": "Heavy wire section. Ensure adequate lube on cut end."
     },
     {
-      "id": 14,
+      "id": 38,
       "part_family": "MM-500-WS",
       "station_num": 2,
       "description": "Cone / Point Forming",
@@ -169,7 +169,7 @@
       "notes": "Verify finger timing CAM settings before first cycle."
     },
     {
-      "id": 15,
+      "id": 39,
       "part_family": "MM-500-WS",
       "station_num": 3,
       "description": "Head Form / Point Finish",
@@ -181,7 +181,7 @@
       "notes": "Check head concentricity."
     },
     {
-      "id": 16,
+      "id": 40,
       "part_family": "MM-500-WS",
       "station_num": 4,
       "description": "Final Head Coin / Size",
@@ -193,7 +193,7 @@
       "notes": "Coining."
     },
     {
-      "id": 17,
+      "id": 41,
       "part_family": "MM-562-WS",
       "station_num": 1,
       "description": "Upset / Point Initiation",
@@ -205,7 +205,7 @@
       "notes": "Upset."
     },
     {
-      "id": 18,
+      "id": 42,
       "part_family": "MM-562-WS",
       "station_num": 2,
       "description": "Cone / Point Forming",
@@ -217,7 +217,7 @@
       "notes": "Cone."
     },
     {
-      "id": 19,
+      "id": 43,
       "part_family": "MM-562-WS",
       "station_num": 3,
       "description": "Head Form / Point Finish",
@@ -229,7 +229,7 @@
       "notes": "Punch pins PP3 and PP4 are longest in the shop — store vertically."
     },
     {
-      "id": 20,
+      "id": 44,
       "part_family": "MM-562-WS",
       "station_num": 4,
       "description": "Final Head Coin / Size",
@@ -241,7 +241,7 @@
       "notes": "Coining."
     },
     {
-      "id": 21,
+      "id": 45,
       "part_family": "MM-625-WS",
       "station_num": 1,
       "description": "Upset / Point Initiation",
@@ -253,7 +253,7 @@
       "notes": "Heavy heading load."
     },
     {
-      "id": 22,
+      "id": 46,
       "part_family": "MM-625-WS",
       "station_num": 2,
       "description": "Cone / Point Forming",
@@ -265,7 +265,7 @@
       "notes": "Run machine at 80% speed until confirmed good on first 25 pieces."
     },
     {
-      "id": 23,
+      "id": 47,
       "part_family": "MM-625-WS",
       "station_num": 3,
       "description": "Head Form / Point Finish",
@@ -277,7 +277,7 @@
       "notes": "Check head flash."
     },
     {
-      "id": 24,
+      "id": 48,
       "part_family": "MM-625-WS",
       "station_num": 4,
       "description": "Final Head Coin / Size",
@@ -289,48 +289,392 @@
       "notes": "ST4 die wears fastest of all families — inspect every 40K pieces."
     }
   ],
+  "transfer_sets": [
+    {
+      "id": 1,
+      "part_family": "MM-250-WS",
+      "transfer_num": 1,
+      "finger_a": "MM-250-F1A",
+      "finger_b": "MM-250-F1B",
+      "notes": "Cutoff to Station 1"
+    },
+    {
+      "id": 2,
+      "part_family": "MM-250-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-250-F2A",
+      "finger_b": "MM-250-F2B",
+      "notes": "Station 1 to Station 2"
+    },
+    {
+      "id": 3,
+      "part_family": "MM-250-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-250-F3A",
+      "finger_b": "MM-250-F3B",
+      "notes": "Station 2 to Station 3"
+    },
+    {
+      "id": 4,
+      "part_family": "MM-250-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-250-F4A",
+      "finger_b": "MM-250-F4B",
+      "notes": "Station 3 to Station 4"
+    },
+    {
+      "id": 5,
+      "part_family": "MM-312-WS",
+      "transfer_num": 1,
+      "finger_a": "MM-312-F1A",
+      "finger_b": "MM-312-F1B",
+      "notes": "Cutoff to Station 1"
+    },
+    {
+      "id": 6,
+      "part_family": "MM-312-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-312-F2A",
+      "finger_b": "MM-312-F2B",
+      "notes": "Station 1 to Station 2"
+    },
+    {
+      "id": 7,
+      "part_family": "MM-312-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-312-F3A",
+      "finger_b": "MM-312-F3B",
+      "notes": "Station 2 to Station 3"
+    },
+    {
+      "id": 8,
+      "part_family": "MM-312-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-312-F4A",
+      "finger_b": "MM-312-F4B",
+      "notes": "Station 3 to Station 4"
+    },
+    {
+      "id": 9,
+      "part_family": "MM-375-WS",
+      "transfer_num": 1,
+      "finger_a": "MM-375-F1A",
+      "finger_b": "MM-375-F1B",
+      "notes": "Cutoff to Station 1"
+    },
+    {
+      "id": 10,
+      "part_family": "MM-375-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-375-F2A",
+      "finger_b": "MM-375-F2B",
+      "notes": "Station 1 to Station 2"
+    },
+    {
+      "id": 11,
+      "part_family": "MM-375-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-375-F3A",
+      "finger_b": "MM-375-F3B",
+      "notes": "Station 2 to Station 3"
+    },
+    {
+      "id": 12,
+      "part_family": "MM-375-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-375-F4A",
+      "finger_b": "MM-375-F4B",
+      "notes": "Station 3 to Station 4"
+    },
+    {
+      "id": 13,
+      "part_family": "MM-500-WS",
+      "transfer_num": 1,
+      "finger_a": "MM-500-F1A",
+      "finger_b": "MM-500-F1B",
+      "notes": "Cutoff to Station 1"
+    },
+    {
+      "id": 14,
+      "part_family": "MM-500-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-500-F2A",
+      "finger_b": "MM-500-F2B",
+      "notes": "Station 1 to Station 2"
+    },
+    {
+      "id": 15,
+      "part_family": "MM-500-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-500-F3A",
+      "finger_b": "MM-500-F3B",
+      "notes": "Station 2 to Station 3"
+    },
+    {
+      "id": 16,
+      "part_family": "MM-500-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-500-F4A",
+      "finger_b": "MM-500-F4B",
+      "notes": "Station 3 to Station 4"
+    },
+    {
+      "id": 17,
+      "part_family": "MM-562-WS",
+      "transfer_num": 1,
+      "finger_a": "MM-562-F1A",
+      "finger_b": "MM-562-F1B",
+      "notes": "Cutoff to Station 1"
+    },
+    {
+      "id": 18,
+      "part_family": "MM-562-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-562-F2A",
+      "finger_b": "MM-562-F2B",
+      "notes": "Station 1 to Station 2"
+    },
+    {
+      "id": 19,
+      "part_family": "MM-562-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-562-F3A",
+      "finger_b": "MM-562-F3B",
+      "notes": "Station 2 to Station 3"
+    },
+    {
+      "id": 20,
+      "part_family": "MM-562-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-562-F4A",
+      "finger_b": "MM-562-F4B",
+      "notes": "Station 3 to Station 4"
+    },
+    {
+      "id": 21,
+      "part_family": "MM-625-WS",
+      "transfer_num": 1,
+      "finger_a": "MM-625-F1A",
+      "finger_b": "MM-625-F1B",
+      "notes": "Cutoff to Station 1"
+    },
+    {
+      "id": 22,
+      "part_family": "MM-625-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-625-F2A",
+      "finger_b": "MM-625-F2B",
+      "notes": "Station 1 to Station 2"
+    },
+    {
+      "id": 23,
+      "part_family": "MM-625-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-625-F3A",
+      "finger_b": "MM-625-F3B",
+      "notes": "Station 2 to Station 3"
+    },
+    {
+      "id": 24,
+      "part_family": "MM-625-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-625-F4A",
+      "finger_b": "MM-625-F4B",
+      "notes": "Station 3 to Station 4"
+    }
+  ],
   "fingers": [
     {
       "id": 1,
       "part_family": "MM-250-WS",
-      "finger_1": "MM-250-F1",
-      "finger_2": "MM-250-F2",
-      "notes": "All 4 stations active when sizing. Fingers sensitive on this family — check clamp pressure before run. ST1 punch pin sets point depth."
+      "transfer_num": 1,
+      "finger_a": "MM-250-F1A",
+      "finger_b": "MM-250-F1B",
+      "notes": "Cutoff to Station 1"
     },
     {
       "id": 2,
-      "part_family": "MM-312-WS",
-      "finger_1": "MM-312-F1",
-      "finger_2": "MM-312-F2",
-      "notes": "All 4 stations active. Confirm MM-312-D2 is loaded, not MM-250-D2."
+      "part_family": "MM-250-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-250-F2A",
+      "finger_b": "MM-250-F2B",
+      "notes": "Station 1 to Station 2"
     },
     {
       "id": 3,
-      "part_family": "MM-375-WS",
-      "finger_1": "MM-375-F1",
-      "finger_2": "MM-375-F2",
-      "notes": "All 4 stations active. 3/8\" is the highest volume family — check die wear at every 50K pieces. KO pins at ST3 and ST4 wear faster on this size."
+      "part_family": "MM-250-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-250-F3A",
+      "finger_b": "MM-250-F3B",
+      "notes": "Station 2 to Station 3"
     },
     {
       "id": 4,
-      "part_family": "MM-500-WS",
-      "finger_1": "MM-500-F1",
-      "finger_2": "MM-500-F2",
-      "notes": "All 4 stations active. 1/2\" requires higher feed roll pressure than smaller families. Verify finger timing CAM settings before first cycle — heavier wire can cause transfer misses at ST2."
+      "part_family": "MM-250-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-250-F4A",
+      "finger_b": "MM-250-F4B",
+      "notes": "Station 3 to Station 4"
     },
     {
       "id": 5,
-      "part_family": "MM-562-WS",
-      "finger_1": "MM-562-F1",
-      "finger_2": "MM-562-F2",
-      "notes": "All 4 stations active. 9/16\" and 5/8\" share the same finger pair design — F1 and F2 are NOT interchangeable with smaller families. Punch pins PP3 and PP4 are longest in the shop — store vertically."
+      "part_family": "MM-312-WS",
+      "transfer_num": 1,
+      "finger_a": "MM-312-F1A",
+      "finger_b": "MM-312-F1B",
+      "notes": "Cutoff to Station 1"
     },
     {
       "id": 6,
+      "part_family": "MM-312-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-312-F2A",
+      "finger_b": "MM-312-F2B",
+      "notes": "Station 1 to Station 2"
+    },
+    {
+      "id": 7,
+      "part_family": "MM-312-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-312-F3A",
+      "finger_b": "MM-312-F3B",
+      "notes": "Station 2 to Station 3"
+    },
+    {
+      "id": 8,
+      "part_family": "MM-312-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-312-F4A",
+      "finger_b": "MM-312-F4B",
+      "notes": "Station 3 to Station 4"
+    },
+    {
+      "id": 9,
+      "part_family": "MM-375-WS",
+      "transfer_num": 1,
+      "finger_a": "MM-375-F1A",
+      "finger_b": "MM-375-F1B",
+      "notes": "Cutoff to Station 1"
+    },
+    {
+      "id": 10,
+      "part_family": "MM-375-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-375-F2A",
+      "finger_b": "MM-375-F2B",
+      "notes": "Station 1 to Station 2"
+    },
+    {
+      "id": 11,
+      "part_family": "MM-375-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-375-F3A",
+      "finger_b": "MM-375-F3B",
+      "notes": "Station 2 to Station 3"
+    },
+    {
+      "id": 12,
+      "part_family": "MM-375-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-375-F4A",
+      "finger_b": "MM-375-F4B",
+      "notes": "Station 3 to Station 4"
+    },
+    {
+      "id": 13,
+      "part_family": "MM-500-WS",
+      "transfer_num": 1,
+      "finger_a": "MM-500-F1A",
+      "finger_b": "MM-500-F1B",
+      "notes": "Cutoff to Station 1"
+    },
+    {
+      "id": 14,
+      "part_family": "MM-500-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-500-F2A",
+      "finger_b": "MM-500-F2B",
+      "notes": "Station 1 to Station 2"
+    },
+    {
+      "id": 15,
+      "part_family": "MM-500-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-500-F3A",
+      "finger_b": "MM-500-F3B",
+      "notes": "Station 2 to Station 3"
+    },
+    {
+      "id": 16,
+      "part_family": "MM-500-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-500-F4A",
+      "finger_b": "MM-500-F4B",
+      "notes": "Station 3 to Station 4"
+    },
+    {
+      "id": 17,
+      "part_family": "MM-562-WS",
+      "transfer_num": 1,
+      "finger_a": "MM-562-F1A",
+      "finger_b": "MM-562-F1B",
+      "notes": "Cutoff to Station 1"
+    },
+    {
+      "id": 18,
+      "part_family": "MM-562-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-562-F2A",
+      "finger_b": "MM-562-F2B",
+      "notes": "Station 1 to Station 2"
+    },
+    {
+      "id": 19,
+      "part_family": "MM-562-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-562-F3A",
+      "finger_b": "MM-562-F3B",
+      "notes": "Station 2 to Station 3"
+    },
+    {
+      "id": 20,
+      "part_family": "MM-562-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-562-F4A",
+      "finger_b": "MM-562-F4B",
+      "notes": "Station 3 to Station 4"
+    },
+    {
+      "id": 21,
       "part_family": "MM-625-WS",
-      "finger_1": "MM-625-F1",
-      "finger_2": "MM-625-F2",
-      "notes": "All 4 stations active. Heaviest wire on MM-14 — run machine at 80% speed until confirmed good on first 25 pieces. ST4 die wears fastest of all families — inspect every 40K pieces. Feed roll pressure will be highest setting in the shop for this family."
+      "transfer_num": 1,
+      "finger_a": "MM-625-F1A",
+      "finger_b": "MM-625-F1B",
+      "notes": "Cutoff to Station 1"
+    },
+    {
+      "id": 22,
+      "part_family": "MM-625-WS",
+      "transfer_num": 2,
+      "finger_a": "MM-625-F2A",
+      "finger_b": "MM-625-F2B",
+      "notes": "Station 1 to Station 2"
+    },
+    {
+      "id": 23,
+      "part_family": "MM-625-WS",
+      "transfer_num": 3,
+      "finger_a": "MM-625-F3A",
+      "finger_b": "MM-625-F3B",
+      "notes": "Station 2 to Station 3"
+    },
+    {
+      "id": 24,
+      "part_family": "MM-625-WS",
+      "transfer_num": 4,
+      "finger_a": "MM-625-F4A",
+      "finger_b": "MM-625-F4B",
+      "notes": "Station 3 to Station 4"
     }
   ]
 }

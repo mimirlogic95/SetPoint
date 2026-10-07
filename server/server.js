@@ -138,11 +138,12 @@ app.get('/api/parts/:partNumber', (req, res) => {
       ORDER BY station_num ASC
     `).all(familyCode);
 
-    // Get transfer fingers
-    const fingers = db.prepare(`
+    // Get transfer finger sets (4 transfer positions)
+    const transfer_sets = db.prepare(`
       SELECT * FROM tooling_fingers
       WHERE part_family = ?
-    `).get(familyCode);
+      ORDER BY transfer_num ASC
+    `).all(familyCode);
 
     // Get previous setpoint runs (newest first)
     const runs = db.prepare(`
@@ -173,9 +174,11 @@ app.get('/api/parts/:partNumber', (req, res) => {
       if (st.spacer) toolCodes.push(st.spacer);
       if (st.ko_pin) toolCodes.push(st.ko_pin);
     }
-    if (fingers) {
-      if (fingers.finger_1) toolCodes.push(fingers.finger_1);
-      if (fingers.finger_2) toolCodes.push(fingers.finger_2);
+    if (transfer_sets && transfer_sets.length > 0) {
+      for (const ts of transfer_sets) {
+        if (ts.finger_a) toolCodes.push(ts.finger_a);
+        if (ts.finger_b) toolCodes.push(ts.finger_b);
+      }
     }
 
     let inventory = [];
@@ -191,7 +194,8 @@ app.get('/api/parts/:partNumber', (req, res) => {
       part,
       familyCode,
       stations,
-      fingers,
+      transfer_sets,
+      fingers: transfer_sets,
       runs,
       familyBaselineRuns,
       inventory

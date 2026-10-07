@@ -97,7 +97,9 @@ export async function fetchPartDetail(partNumber) {
 
   // Tooling stations
   const stations = staticTooling.stations.filter(s => s.part_family === familyCode);
-  const fingers = staticTooling.fingers.find(f => f.part_family === familyCode);
+  const transfer_sets = (staticTooling.transfer_sets || staticTooling.fingers || [])
+    .filter(f => f.part_family === familyCode)
+    .sort((a, b) => a.transfer_num - b.transfer_num);
 
   // Runs: combine static baseline runs with any runs saved in localStorage
   const localRuns = getLocalRuns().filter(r => r.part_number.toLowerCase() === partNumber.toLowerCase());
@@ -117,6 +119,13 @@ export async function fetchPartDetail(partNumber) {
   for (const st of stations) {
     if (st.die) toolCodes.push(st.die);
     if (st.punch) toolCodes.push(st.punch);
+    if (st.punch_pin) toolCodes.push(st.punch_pin);
+    if (st.spacer) toolCodes.push(st.spacer);
+    if (st.ko_pin) toolCodes.push(st.ko_pin);
+  }
+  for (const ts of transfer_sets) {
+    if (ts.finger_a) toolCodes.push(ts.finger_a);
+    if (ts.finger_b) toolCodes.push(ts.finger_b);
   }
   const inventory = staticInventory.filter(item => toolCodes.includes(item.item_code));
 
@@ -124,7 +133,8 @@ export async function fetchPartDetail(partNumber) {
     part,
     familyCode,
     stations,
-    fingers,
+    transfer_sets,
+    fingers: transfer_sets,
     runs,
     familyBaselineRuns,
     inventory

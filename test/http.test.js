@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -5,11 +6,16 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Isolate tests with a temporary copy of the development database
+const devDbPath = path.join(__dirname, '..', 'data', 'mimir_factory.db');
+const testDbPath = path.join(__dirname, '..', 'data', `mimir_test_http_${Date.now()}.db`);
+fs.copyFileSync(devDbPath, testDbPath);
+
 const serverPath = path.join(__dirname, '..', 'server', 'server.js');
 console.log('Spawning test server:', serverPath);
 
 const server = spawn('node', [serverPath], {
-  env: { ...process.env, PORT: '3099' },
+  env: { ...process.env, PORT: '3099', DB_PATH: testDbPath },
   stdio: ['ignore', 'pipe', 'pipe']
 });
 
@@ -49,13 +55,17 @@ async function runTests() {
     console.log(`    Retrieved ${parts.length} parts. First part: ${parts[0].part_number} (${parts[0].family})`);
     if (parts.length !== 43) throw new Error(`Expected 43 parts, got ${parts.length}`);
 
-    // 3. Single part details with stations and past runs
+    // 3. Single part details with stations, 4 transfer finger sets, and past runs
     console.log('\n[3] Testing GET /api/parts/MM-250-075-WS ...');
     const detailRes = await fetch('http://127.0.0.1:3099/api/parts/MM-250-075-WS');
     const detail = await detailRes.json();
     console.log(`    Part: ${detail.part.part_number}`);
     console.log(`    Stations: ${detail.stations.length} (Station 1 Die: ${detail.stations[0].die})`);
-    console.log(`    Fingers: ${detail.fingers.finger_1}, ${detail.fingers.finger_2}`);
+    console.log(`    Transfer Sets: ${detail.transfer_sets.length} sets`);
+    if (detail.transfer_sets.length !== 4) throw new Error(`Expected 4 transfer sets, got ${detail.transfer_sets.length}`);
+    for (const ts of detail.transfer_sets) {
+      console.log(`      Transfer ${ts.transfer_num}: A=${ts.finger_a}, B=${ts.finger_b}`);
+    }
     console.log(`    Past Runs: ${detail.runs.length} (Latest run operator: ${detail.runs[0].operator_name}, Die KO 1: ${detail.runs[0].die_ko_1_mm}mm, Wedge 1: ${detail.runs[0].wedge_1_mm}mm)`);
     if (detail.stations.length !== 4) throw new Error('Expected 4 stations');
     if (detail.runs.length === 0) throw new Error('Expected past runs');
@@ -112,11 +122,27 @@ async function runTests() {
     console.log('=============================================\n');
   } finally {
     server.kill();
+    await wait(300);
+    try {
+      if (fs.existsSync(testDbPath)) fs.unlinkSync(testDbPath);
+      if (fs.existsSync(`${testDbPath}-wal`)) fs.unlinkSync(`${testDbPath}-wal`);
+      if (fs.existsSync(`${testDbPath}-shm`)) fs.unlinkSync(`${testDbPath}-shm`);
+    } catch (e) {
+      // ignore
+    }
   }
 }
 
-runTests().catch(err => {
+runTests().catch(async (err) => {
   console.error('\n[FAIL] Test failed:', err);
   server.kill();
+  await wait(300);
+  try {
+    if (fs.existsSync(testDbPath)) fs.unlinkSync(testDbPath);
+    if (fs.existsSync(`${testDbPath}-wal`)) fs.unlinkSync(`${testDbPath}-wal`);
+    if (fs.existsSync(`${testDbPath}-shm`)) fs.unlinkSync(`${testDbPath}-shm`);
+  } catch (e) {
+    // ignore
+  }
   process.exit(1);
 });
